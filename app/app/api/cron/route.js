@@ -1,6 +1,5 @@
 const KEY = process.env.API_KEY;
 const DOMAIN = process.env.DOMAIN;
-// const CronJob = require("cron").CronJob;
 
 const mailgun = require("mailgun-js")({
 	apiKey: KEY,
