@@ -66,12 +66,16 @@ export async function GET(req, res) {
 		});
 	}
 
-	const job = new CronJob("00 19 * * 1-5", function () {
-		emailList.map((list) =>
-			sendEmail(list.email, list.company, list.subject, list.type)
-		);
-	});
-	job.start();
+	emailList.map((list) =>
+		sendEmail(list.email, list.company, list.subject, list.type)
+	);
+
+	// const job = new CronJob("00 19 * * 1-5", function () {
+	// 	emailList.map((list) =>
+	// 		sendEmail(list.email, list.company, list.subject, list.type)
+	// 	);
+	// });
+	// job.start();
 }
 
 // const KEY = process.env.API_KEY;
